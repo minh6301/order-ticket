@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH4+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/timetable.css">
+</head>
+
+<body>
+    <nav class="header">
+        <nav class="header_up">
+            <a href="http://127.0.0.1:5501/html/trangchu.html">
+                <img src="https://www.cinestar.com.vn/pictures/moi/9Logo/white-2018.png" alt="">
+            </a>
+            <nav class="header_search">
+                <nav class="header_search_text">
+                    <input type="text" placeholder="Nhập tên phim bạn muốn tìm kiếm ở đây">
+                </nav>
+                <nav class="header_search_icon">
+                    <i class="fas fa-search"></i>
+                </nav>
+            </nav>
+        </nav>
+        <nav class="header_down">
+            <nav class="header_link_list">
+                <div class="header_link_list_item">
+                    <a href="http://127.0.0.1:5501/html/movie.html">PHIM</a>
+                </div>
+                <div class="header_link_list_item">
+                    <a href="http://127.0.0.1:5501/html/lichchieu.html">LỊCH CHIẾU</a>
+                </div>
+                <div class="header_link_list_item">
+                    <a href="#">RẠP VÀ GIÁ</a>
+                </div>
+                <div class="header_link_list_item">
+                    <a href="#">KHUYẾN MÃI</a>
+                </div>
+                <div class="header_link_list_item">
+                    <a href="#">GIẢI ĐÁP</a>
+                </div>
+                <div class="header_link_list_item">
+                    <a href="#">TIN TỨC</a>
+                </div>
+                <div class="header_link_list_item">
+                    <a href="#">GIỚI THIỆU</a>
+                </div>
+                <div class="header_link_list_item">
+                    <a href="#">LIÊN HỆ</a>
+                </div>
+            </nav>
+        </nav>
+    </nav>
+
+    <div class="container">
+        <div class="register_content">
+            <div class="register_member">
+                <div class="member_signin">
+                    <a href="#"><i class="fas fa-user register_icon"></i> ĐĂNG KÝ</a>
+                </div>
+                <div class="member_login">
+                    <a href="http://127.0.0.1:5501/html/login.html?"><i class="fas fa-sign-in-alt register_icon"></i>
+                        ĐĂNG NHẬP</a>
+                </div>
+            </div>
+            <div class="regist_hotline">
+                <a href="#"><i class="fas fa-phone-volume register_icon"></i> 028 7300 8881</a>
+            </div>
+        </div>
+
+        <div class="grid_container">
+            <div class="container_slide">
+                <nav id="slider-wrapper">
+                    <nav class="inner-wrapper">
+                        <input checked type="radio" name="slide" class="control" id="Slide1" />
+                        <label for="Slide1" id="s1"></label>
+                        <input type="radio" name="slide" class="control" id="Slide2" />
+                        <label for="Slide2" id="s2"></label>
+                        <input type="radio" name="slide" class="control" id="Slide3" />
+                        <label for="Slide3" id="s3"></label>
+                        <input type="radio" name="slide" class="control" id="Slide4" />
+                        <label for="Slide4" id="s4"></label>
+                        <nav class="overflow-wrapper">
+                            <a class="slide" href=""><img src="https://www.cinestar.com.vn/pictures/c'monday.jpg" /></a>
+                            <a class="slide" href=""><img
+                                    src="https://www.cinestar.com.vn/pictures/z2161740555387_88fc044837bea7695ee9ec8320a39cef.jpg" /></a>
+                            <a class="slide" href=""><img src="https://www.cinestar.com.vn/pictures/c'member.jpg" /></a>
+                            <a class="slide" href=""><img
+                                    src="https://www.cinestar.com.vn/pictures/z2161740555616_cf6d683f88aa9447af57b89917e84acb.jpg" /></a>
+                        </nav>
+                    </nav>
+                </nav>
+            </div><br>
+
+            <div class="select_movie">
+                <div class="order_ticket">
+                    <div>
+                        <img src="http://dabacocinema.vn/Content/images/template/ticket-icon1.png" alt="" width="50"
+                            height="50">
+                    </div>
+                    <div style="font-size: 22px; color: white;">
+                        <span>Đặt vé Online</span>
+                    </div>
+                </div>
+                <div class="select_list_movie">
+                    <div class="group_select_movie">
+                        <select name="" id="">
+                            <option value="">a</option>
+                        </select>
+                    </div>
+                    <div class="group_select_movie">
+                        <select name="" id="">
+                            <option value="">a</option>
+                        </select>
+                    </div>
+                    <div class="group_select_movie">
+                        <select name="" id="">
+                            <option value="">a</option>
+                        </select>
+                    </div>
+                    <div class="group_select_movie">
+                        <select name="" id="">
+                            <option value="">a</option>
+                        </select>
+                    </div>
+                    <div class="button_select-movie">
+                        <button type="submit">
+                            <a href="#">Đặt vé</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showtimes-list-movie">
+                <div>
+                    <h2 style="font-weight: 600;">Lịch chiếu</h2>
+                </div>
+                <div class="showtimes-movie">
+                    <div class="info-movie">
+                        <div class="image-movie">
+                            <img src="https://cinestar.com.vn/pictures/Cinestar/04-2022/batman.jpg" alt="" width="190px"
+                                height="280px">
+                        </div>
+                        <div class="title-movie">
+                            <h4 class="title">BATMAN(C16):Vạch trần sự thật</h4>
+                            <p>Lấy bối cảnh hai năm sau khi tỷ phú Bruce Wayne khoác lên người chiếc áo choàng đen cùng
+                                mặt nạ Người Dơi để chiến đấu
+                                với tội phạm. Lúc này anh vẫn non trẻ, bốc đồng và chưa đủ chín chắn trước nhiều chướng
+                                ngại bủa vây. Đặc biệt, bộ phim
+                                sẽ mang màu sắc trinh thám đầy lôi cuốn, khai thác hình tượng “thám tử vĩ đại nhất thế
+                                giới” vốn đã nổi tiếng của Batman
+                                từ truyện tranh lên màn ảnh rộng.</p>
+                        </div>
+                    </div>
+                    <div class="timetable">
+                        <div class="datetime">
+                            03/03
+                        </div>
+                        <div class="timestample">
+                            <a href="#">
+                                <div class="timestample-hours">
+                                    12:00
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="timestample-hours">
+                                    12:00
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="timestample-hours">
+                                    12:00
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="timestample-hours">
+                                    12:00
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="timestample-hours">
+                                    12:00
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="timestample-hours">
+                                    12:00
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="timestample-hours">
+                                    12:00
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="showtimes-movie">
+                    <div class="info-movie">
+                        <div class="image-movie">
+                            <img src="https://cinestar.com.vn/pictures/Cinestar/04-2022/batman.jpg" alt="" width="190px"
+                                height="280px">
+                        </div>
+                        <div class="title-movie">
+                            <h4 class="title">BATMAN(C16):Vạch trần sự thật</h4>
+                            <p>Lấy bối cảnh hai năm sau khi tỷ phú Bruce Wayne khoác lên người chiếc áo choàng đen cùng
+                                mặt nạ Người Dơi để chiến đấu
+                                với tội phạm. Lúc này anh vẫn non trẻ, bốc đồng và chưa đủ chín chắn trước nhiều chướng
+                                ngại bủa vây. Đặc biệt, bộ phim
+                                sẽ mang màu sắc trinh thám đầy lôi cuốn, khai thác hình tượng “thám tử vĩ đại nhất thế
+                                giới” vốn đã nổi tiếng của Batman
+                                từ truyện tranh lên màn ảnh rộng.</p>
+                        </div>
+                    </div>
+                    <div class="timetable">
+                        <div class="datetime">
+                            03/03/2022
+                        </div>
+                        <div class="timestample">
+                            <div class="timestample-hours">
+                                12:00
+                            </div>
+                            <div class="timestample-hours">
+                                12:00
+                            </div>
+                            <div class="timestample-hours">
+                                12:00
+                            </div>
+                            <div class="timestample-hours">
+                                12:00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="grid_footer">
+            <div>
+                <div>
+                    <h4>HỆ THỐNG RẠP</h4>
+                </div>
+                <div>
+                    <ul>
+                        <li>CineStar Quốc Thanh</li>
+                        <li>CineStar Đà Lạt</li>
+                        <li>CineStar Hai Bà Trưng</li>
+                        <li>CineStar Bình Dương</li>
+                        <li>CineStar Huế</li>
+                        <li>CineStar Mỹ Tho</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h4>CINESTART</h4>
+                </div>
+                <div>
+                    <ul>
+                        <li>Phim đang chiếu</li>
+                        <li>Phim sắp chiếu</li>
+                        <li>Suất chiếu đặc biệt</li>
+                        <li>Lịch chiếu</li>
+                        <li>Khuyến mãi</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h4>Thông tin</h4>
+                </div>
+                <div>
+                    <ul>
+                        <li>Giới thiệu</li>
+                        <li>Tin tức</li>
+                        <li>Hỏi và đáp</li>
+                        <li>Liên hệ</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h4>Chính sách và quy định</h4>
+                </div>
+                <div>
+                    <ul>
+                        <li>Quy định chung</li>
+                        <li>Điều khoản giao dịch</li>
+                        <li>Chính sách bảo mật</li>
+                        <li>Thông tin công ty</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
