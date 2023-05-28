@@ -60,40 +60,7 @@
                 </nav>
             </div><br>
 
-            <div class="select_movie">
-                <div class="order_ticket">
-                    <div>
-                        <img src="http://dabacocinema.vn/Content/images/template/ticket-icon1.png" alt="" width="50"
-                            height="50">
-                    </div>
-                    <div style="font-size: 22px; color: white;">
-                        <span>Đặt vé Online</span>
-                    </div>
-                </div>
-                <div class="select_list_movie">
-                    <div class="group_select_movie">
-                        <select name="" id="">
-                            <option value="">-- Chọn phim --</option>
-                        </select>
-                    </div>
-                    <div class="group_select_movie">
-                        <select name="" id="">
-                            <option value="">-- Chọn rạp --</option>
-                        </select>
-                    </div>
-                    <div class="group_select_movie">
-                        <select name="" id="">
-                            <option value="">-- Chọn ngày--</option>
-                        </select>
-                    </div>
-                    <div class="group_select_movie">
-                        <select name="" id="">
-                            <option value="">-- Chọn suất chiếu --</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <br>
+            <?php require '../html/selectMovie.php';?>
 
             <div class="movie">
                 <div class="menu_tab">
@@ -174,161 +141,141 @@
 
                 <!-- Phim sắp chiếu  -->
                 <div class="show_list_movie">
-                    <nav>
+                <nav>
+                        <?php
+                                    $sql = "SELECT * FROM tbl_movie WHERE movieactive='Phim sắp chiếu' AND active='Hoạt động' LIMIT 10 ";
+                                    $res = mysqli_query($conn, $sql);
+                                    if($res==TRUE) 
+                                    {
+                                        $count = mysqli_num_rows($res);
+                                        $stt=1;
+                                        if($count>0) 
+                                        {
+                                            while($rows=mysqli_fetch_assoc($res))
+                                            {
+                                                $STT = $rows['stt'];
+                                                $movie_name = $rows['moviename'];
+                                                $present = $rows['present'];
+                                                $movie_active = $rows['movieactive'];
+                                                $theloai = $rows['theloai'];
+                                                $loaiphim = $rows['loaiphim'];
+                                                $gia = $rows['gia'];
+                                                $active = $rows['active'];
+                                                $image_name = $rows['image'];
+                                ?>
                         <div class="show_list_movie_details">
                             <div class="image_movie">
-                                <a href="http://127.0.0.1:5501/html/details.html">
-                                    <img src="https://cinestar.com.vn/pictures/Cinestar/11-2021/no-way-home.jpg" alt="">
+                                <a href="<?php echo SITEURL;?>html/details.php?STT=<?php echo $STT;?>">
+                                    <img src="<?php echo SITEURL; ?>admin/images/<?php echo $image_name; ?>" alt="">
                                 </a>
                             </div>
                             <div class="info_movie">
                                 <div class="name_movie">
-                                    <a href="http://127.0.0.1:5501/html/details.html">
-                                        <h3>SPIDER-MAN (C13): NGƯỜI NHỆN KHÔNG CÒN NHÀ</h3>
-                                        <div>
-                                            "Spider-Man: No Way Home" sẽ tiếp nối sự kiện hấp dẫn ở phần phim trước khi
-                                            danh
-                                            tính của Peter Parker đã bị Mysterio (Jake Gyllenhaal) hé lộ cho cả thế giới
+                                    <a href="<?php echo SITEURL;?>html/details.php?STT=<?php echo $STT;?>">
+                                        <h3><?php echo $movie_name;?></h3>
+                                        <div style="height: 100px; overflow:hidden;text-overflow: clip;">
+                                            <?php echo $present;?>
                                         </div>
                                     </a>
                                 </div>
-                                <div>
-                                    2D
+                                <div style="color: white;">
+                                    Thể loại phim : <?php echo $theloai;?>
                                 </div>
                                 <div class="trailer_movie">
                                     <div class="trailer">
                                         <i class="fab fa-youtube" style="color: red;"></i> Trailer
                                     </div>
                                     <div class="buy_ticket">
-                                        <a href="http://127.0.0.1:5501/html/buy-ticket.html">Mua vé</a>
+                                        <a href="<?php echo SITEURL;?>html/details.php?STT=<?php echo $STT;?>">Mua
+                                            vé</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="show_list_movie_details">
-                            <div class="image_movie">
-                                <img src="https://cinestar.com.vn/pictures/Cinestar/11-2021/no-way-home.jpg" alt="">
-                            </div>
-                            <div class="info_movie">
-                                <div class="name_movie">
-                                    <h3>SPIDER-MAN (C13): NGƯỜI NHỆN KHÔNG CÒN NHÀ</h3>
-                                    <div>
-                                        "Spider-Man: No Way Home" sẽ tiếp nối sự kiện hấp dẫn ở phần phim trước khi danh
-                                        tính của Peter Parker đã bị Mysterio (Jake Gyllenhaal) hé lộ cho cả thế giới
-                                    </div>
-                                </div>
-                                <div>
-                                    2D
-                                </div>
-                                <div class="trailer_movie">
-                                    <div class="trailer">
-                                        <i class="fab fa-youtube" style="color: red;"></i> Trailer
-                                    </div>
-                                    <div class="buy_ticket">
-                                        <a href="http://127.0.0.1:5501/html/buy-ticket.html">Mua vé</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="show_list_movie_details">
-                            <div class="image_movie">
-                                <img src="https://cinestar.com.vn/pictures/Cinestar/11-2021/no-way-home.jpg" alt="">
-                            </div>
-                            <div class="info_movie">
-                                <div class="name_movie">
-                                    <h3>SPIDER-MAN (C13): NGƯỜI NHỆN KHÔNG CÒN NHÀ</h3>
-                                    <div>
-                                        "Spider-Man: No Way Home" sẽ tiếp nối sự kiện hấp dẫn ở phần phim trước khi danh
-                                        tính của Peter Parker đã bị Mysterio (Jake Gyllenhaal) hé lộ cho cả thế giới
-                                    </div>
-                                </div>
-                                <div>
-                                    2D
-                                </div>
-                                <div class="trailer_movie">
-                                    <div class="trailer">
-                                        <i class="fab fa-youtube" style="color: red;"></i> Trailer
-                                    </div>
-                                    <div class="buy_ticket">
-                                        <a href="http://127.0.0.1:5501/html/buy-ticket.html">Mua vé</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
 
+                                    }
+                                    ?>
                     </nav>
                 </div>
 
                 <!-- Suất chiếu đặc biệt -->
                 <div class="show_list_movie">
-                    <nav></nav>
+                <nav>
+                        <?php
+                                    $sql = "SELECT * FROM tbl_movie WHERE movieactive='Suất chiếu đặc biệt' AND active='Hoạt động' LIMIT 10 ";
+                                    $res = mysqli_query($conn, $sql);
+                                    if($res==TRUE) 
+                                    {
+                                        $count = mysqli_num_rows($res);
+                                        $stt=1;
+                                        if($count>0) 
+                                        {
+                                            while($rows=mysqli_fetch_assoc($res))
+                                            {
+                                                $STT = $rows['stt'];
+                                                $movie_name = $rows['moviename'];
+                                                $present = $rows['present'];
+                                                $movie_active = $rows['movieactive'];
+                                                $theloai = $rows['theloai'];
+                                                $loaiphim = $rows['loaiphim'];
+                                                $gia = $rows['gia'];
+                                                $active = $rows['active'];
+                                                $image_name = $rows['image'];
+                                ?>
+                        <div class="show_list_movie_details">
+                            <div class="image_movie">
+                                <a href="<?php echo SITEURL;?>html/details.php?STT=<?php echo $STT;?>">
+                                    <img src="<?php echo SITEURL; ?>admin/images/<?php echo $image_name; ?>" alt="">
+                                </a>
+                            </div>
+                            <div class="info_movie">
+                                <div class="name_movie">
+                                    <a href="<?php echo SITEURL;?>html/details.php?STT=<?php echo $STT;?>">
+                                        <h3><?php echo $movie_name;?></h3>
+                                        <div style="height: 100px; overflow:hidden;text-overflow: clip;">
+                                            <?php echo $present;?>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div style="color: white;">
+                                    Thể loại phim : <?php echo $theloai;?>
+                                </div>
+                                <div class="trailer_movie">
+                                    <div class="trailer">
+                                        <i class="fab fa-youtube" style="color: red;"></i> Trailer
+                                    </div>
+                                    <div class="buy_ticket">
+                                        <a href="<?php echo SITEURL;?>html/details.php?STT=<?php echo $STT;?>">Mua
+                                            vé</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+
+                                    }
+                                    ?>
+                    </nav>
                 </div>
 
             </div>
             <script src="../js/movie.js"></script>
         </div>
     </div>
-
-
-    <div class="footer">
-        <div class="grid_footer">
-            <div>
-                <div>
-                    <h4>HỆ THỐNG RẠP</h4>
-                </div>
-                <div>
-                    <ul>
-                        <li>CineStar Quốc Thanh</li>
-                        <li>CineStar Đà Lạt</li>
-                        <li>CineStar Hai Bà Trưng</li>
-                        <li>CineStar Bình Dương</li>
-                        <li>CineStar Huế</li>
-                        <li>CineStar Mỹ Tho</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <h4>CINESTART</h4>
-                </div>
-                <div>
-                    <ul>
-                        <li>Phim đang chiếu</li>
-                        <li>Phim sắp chiếu</li>
-                        <li>Suất chiếu đặc biệt</li>
-                        <li>Lịch chiếu</li>
-                        <li>Khuyến mãi</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <h4>Thông tin</h4>
-                </div>
-                <div>
-                    <ul>
-                        <li>Giới thiệu</li>
-                        <li>Tin tức</li>
-                        <li>Hỏi và đáp</li>
-                        <li>Liên hệ</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <h4>Chính sách và quy định</h4>
-                </div>
-                <div>
-                    <ul>
-                        <li>Quy định chung</li>
-                        <li>Điều khoản giao dịch</li>
-                        <li>Chính sách bảo mật</li>
-                        <li>Thông tin công ty</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php 
+        require'../html/footer.php'
+    ?>
 </body>
 
 </html>

@@ -1,7 +1,9 @@
+
+
 var countChecked = function () {
     var n = $("input:checked").length;
     $("ol").text("Số ghế bạn đã chọn: " + n + (n === 1 ? "" : ""));
-    $("#price").html("Tổng tiền : " + (60000 * (n + (n === 1 ? "" : ""))) + "VND");
+    $("#price").html("Tổng tiền : " + (65000 * (n + (n === 1 ? "" : ""))) + "VND");
 };
 countChecked();
 

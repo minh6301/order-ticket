@@ -4,9 +4,9 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM tbl_kh WHERE username='$username' and password = '$password' and email = '$email'";
+        $sql1 = "SELECT * FROM tbl_kh WHERE username='$username' and password = '$password' ";
 
-        $res = mysqli_query($conn, $sql);
+        $res = mysqli_query($conn, $sql1);
 
         if($res==true)
         {

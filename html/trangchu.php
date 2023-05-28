@@ -24,7 +24,7 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH4+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Cinestar</title>
 </head>
 
@@ -57,45 +57,6 @@
                 </nav>
             </div><br>
 
-            <div class="select_movie">
-                <div class="order_ticket">
-                    <div>
-                        <img src="http://dabacocinema.vn/Content/images/template/ticket-icon1.png" alt="" width="50"
-                            height="50">
-                    </div>
-                    <div style="font-size: 22px; color: white;">
-                        <span>Đặt vé Online</span>
-                    </div>
-                </div>
-                <div class="select_list_movie">
-                    <div class="group_select_movie">
-                        <select name="" id="">
-                            <option value="">a</option>
-                        </select>
-                    </div>
-                    <div class="group_select_movie">
-                        <select name="" id="">
-                            <option value="">a</option>
-                        </select>
-                    </div>
-                    <div class="group_select_movie">
-                        <select name="" id="">
-                            <option value="">a</option>
-                        </select>
-                    </div>
-                    <div class="group_select_movie">
-                        <select name="" id="">
-                            <option value="">a</option>
-                        </select>
-                    </div>
-                    <div class="button_select-movie">
-                        <button type="submit">
-                            <a href="#">Đặt vé</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <br>
 
             <div class="movie">
                 <div class="menu_tab">
@@ -143,7 +104,7 @@
                                         <p><a href="<?php echo SITEURL;?>html/details.php?STT=<?php echo $STT; ?>"
                                                 style="padding: 0px 10px; ">Chi tiết</a><br></p>
                                         <span class="buy_ticket">
-                                            <a href="http://127.0.0.1:5501/html/buy-ticket.html">MUA VÉ</a>
+                                            <a href="<?php echo SITEURL;?>html/details.php?STT=<?php echo $STT; ?>">MUA VÉ</a>
                                         </span>
                                     </span>
                                     <img src="<?php echo SITEURL; ?>admin/images/<?php echo $image_name; ?>" alt=""
@@ -320,7 +281,8 @@
             </div>
         </div>
     </div>
-    <script src="../js/js.js"></script>
+    <script src="../js//js.js"></script>
+    <script src="../js//hiddenPassword.js"></script>
     <script src="../js/multi_slider.js"></script>
 
     <?php require'../html/footer.php';?>

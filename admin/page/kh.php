@@ -26,7 +26,7 @@
 
                 <div class="form-search">
                     <form action="" method="get">
-                        <input type="text" placeholder="Tìm kiếm ...">
+                        <input type="text" name="search" placeholder="Tìm kiếm ...">
                         <button type="submit" name="search"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
@@ -45,11 +45,11 @@
             if(isset($_POST['search']))
                 {
                     $search = $_GET['search'];   
-                    $sql = "SELECT * FROM tbl_user where
+                    $sql = "SELECT * FROM tbl_kh where
                         fullname like '%$search%' or
                         username like '%$search%'
                     ";
-                    $res2 = mysqli_query($conn, $sql);
+                    $res = mysqli_query($conn, $sql);
                 }
                     $sql = "SELECT * FROM tbl_kh";
                     $res = mysqli_query($conn, $sql);

@@ -88,15 +88,6 @@
                         </td>
                     </tr>
                     <tr>
-                        <td id="rowspan">Thời gian chiếu trong ngày</td>
-                        <td>
-                            <input type="time" name="time" />
-                            <input type="time" name="time2" />
-                            <input type="time" name="time3" />
-                            <input type="time" name="time4" />
-                        </td>
-                    </tr>
-                    <tr>
                         <td id="rowspan">Giá vé</td>
                         <td>
                             <input type="text" name="gia" placeholder="Nhập giá vé">
@@ -115,7 +106,7 @@
                         <td colspan="2">
                             <button type="submit" name="save" class="save"><i
                                     class="fa fa-save fa-icon"></i>Lưu</button>
-                            <button class="exit"><a href="<?php echo SITEURL;?>admin/page/movie.php"><i
+                            <button class="exit"><a href="<?php echo SITEURL;?>admin/page/all-movie.php"><i
                                         class="fa fa-sign-out fa-icon"></i>Trở
                                     lại</a></button>
                         </td>
@@ -137,10 +128,6 @@
         $gia = $_POST['gia'];
         $active = $_POST['active'];
         $image_name = $_POST['image'];
-        $time = $_POST['time'];
-        $time2 = $_POST['time2'];
-        $time3 = $_POST['time3'];
-        $time4 = $_POST['time4'];
         $dienvien = $_POST['dienvien'];
         $daodien = $_POST['daodien'];
         $khoichieu = $_POST['khoichieu'];
@@ -205,10 +192,6 @@
             dienvien = '$dienvien',
             daodien = '$daodien',
             khoichieu = '$khoichieu',
-            time2 = '$time2',
-            time3 = '$time3',
-            time4 = '$time4',
-            time = '$time',
             image = '$image_name'
         ";
         $res = mysqli_query($conn, $sql) ;

@@ -51,32 +51,55 @@
                 <table>
                     <tr>
                         <th>STT</th>
-                        <th>Tài khoản</th>
-                        <th>Điện thoại</th>
                         <th>Tên phim</th>
+                        <!-- <th>Địa chỉ</th> -->
+                        <th>Ghế</th>
                         <th>Thời gian</th>
-                        <th>Chi tiết</th>
                     </tr>
-                    <tr>
-                        <td>.1</td>
-                        <td>nguyenducminh</td>
-                        <td>0334636815</td>
-                        <td>Spiderman : No way home</td>
-                        <td>time</td>
-                        <td>
-                            <button class="icon-edit"><a href="#"><i class="fa fa-info fa-edit"></i></a></button>
-                        </td>
+                    <?php
+            if(isset($_POST['search']))
+                {
+                    $search = $_GET['search'];   
+                    $sql = "SELECT * FROM tbl_user where
+                        fullname like '%$search%' or
+                        username like '%$search%'
+                    ";
+                    $res2 = mysqli_query($conn, $sql);
+                }
+                    $sql = "SELECT * FROM tbl_ticket";
+                    $res = mysqli_query($conn, $sql);
+                    if($res==TRUE) 
+                    {
+                        $count = mysqli_num_rows($res);
+                        $stt=1;
+                        if($count>0) 
+                        {
+                            while($rows=mysqli_fetch_assoc($res))
+                            {
+                                $STT = $rows['stt'];
+                                $movie_name = $rows['moviename'];
+                                $address = $rows['address']; 
+                                $times = $rows['time']; 
+                                $date = $rows['date']; 
+                                $chairs = $rows['name']; 
+            ?>
+                <tr>
+                        <td><?php echo $stt++;?></td>
+                        <td><?php echo $movie_name;?></td>
+                        <!-- <td><?php echo $address;?></td> -->
+                        <td><?php echo $chairs;?></td>
+                        <td><?php echo $times;?></td>
                     </tr>
-                    <tr>
-                        <td>.1</td>
-                        <td>nguyenducminh</td>
-                        <td>0334636815</td>
-                        <td>Spiderman : No way home</td>
-                        <td>time</td>
-                        <td>
-                            <button class="icon-edit"><a href="#"><i class="fa fa-info fa-edit"></i></a></button>
-                        </td>
-                    </tr>
+                <?php
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                
+                            }
+            ?>
+                    
                 </table>
             </div>
         </div>

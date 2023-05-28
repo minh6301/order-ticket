@@ -1,14 +1,16 @@
 <nav class="header">
     <nav class="header_up">
         <a href="<?php echo SITEURL;?>html/trangchu.php">
-            <img src="https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png" alt="">
+            <img src="https://cinestar.com.vn/pictures/cache/moi/9Logo/trang-100x100.png" alt="">
         </a>
         <nav class="header_search">
             <nav class="header_search_text">
-                <input type="text" placeholder="Nhập tên phim bạn muốn tìm kiếm ở đây">
+                <input type="text" name="search" placeholder="Nhập tên phim bạn muốn tìm kiếm ở đây">
             </nav>
             <nav class="header_search_icon">
-                <i class="fas fa-search"></i>
+                <button type="submit" name="search"style="border:none; background: none; width: 100%">
+                    <i class="fas fa-search"></i>
+                </button>
             </nav>
         </nav>
     </nav>

@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-search">
                     <form action="" method="get">
-                        <input type="text" placeholder="Tìm kiếm ...">
+                        <input type="text" name="search" placeholder="Tìm kiếm ...">
                         <button type="submit" name="search"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
@@ -48,18 +48,18 @@
                     <th><i class="fa fa-gears"></i></th>
                 </tr>
                 <?php
-            if(isset($_POST['search']))
+                if(isset($_POST['search']))
                 {
                     $search = $_GET['search'];   
-                    $sql = "SELECT * FROM tbl_user where
-                        fullname like '%$search%' or
-                        username like '%$search%'
+                    $sql1 = "SELECT * FROM tbl_new where
+                        title like '%$search%' or
+                        stt like '%$search%'
                     ";
-                    $res2 = mysqli_query($conn, $sql);
+                    $res2 = mysqli_query($conn, $sql1);
                 }
                     $sql = "SELECT * FROM tbl_new";
                     $res = mysqli_query($conn, $sql);
-                    if($res==TRUE) 
+                    if($res2==TRUE || $res==TRUE) 
                     {
                         $count = mysqli_num_rows($res);
                         $stt=1;

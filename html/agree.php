@@ -38,18 +38,18 @@
         // }
     }
      
-    function showgiohang()
+    function buyTicket()
     {
         if(isset($_SESSION['moviename']))
         {
             ?>
-<div class="movie_info">
-    <h5> <?=$_SESSION['address'];?> | <?=$_SESSION['moviename'];?> </h5>
-    <h5> <?=$_SESSION['date'];?> | <?=$_SESSION['time'];?></h5>
-</div>
-<?php
-            }
-            
+                <div class="movie_info">
+                    <h5> <?=$_SESSION['address'];?> | <?=$_SESSION['moviename'];?> </h5>
+                    <h5> <?=$_SESSION['date'];?> | <?=$_SESSION['time'];?></h5>
+                </div>
+            <?php
+        }
+                
     }
 
     if(isset($_POST['save']))
@@ -63,6 +63,10 @@
         $chairs = implode("," ,$chair);
 
         $sql1 = "INSERT INTO tbl_ticket SET
+            moviename = '$movie_name',
+            gia = '$gia',
+            time = '$times',
+            date = '$date',
             name = '$chairs'
         ";
         $res2 = mysqli_query($conn, $sql1);
@@ -75,12 +79,40 @@
             $_SESSION['date']=$date;
             $_SESSION['gia']=$gia;
             $_SESSION['chairs']=$chairs;
+            header("Location:".SITEURL."html/bill.php");
         }
         else
         {
-            echo "co cai nit";
+            header("Location:".SITEURL."html/buy-ticket.php");
+        }
+    }
+
+    function bill(){
+        if(isset($_SESSION["moviename"]))
+        {
+            ?>
+                <div>
+                        <h5>Thông tin vé bạn đã chọn</h5><br>
+                        <div>
+                            <strong>Phim :</strong> <?=$_SESSION['moviename'];?>
+                        </div>
+                        <div>
+                            <strong>Ghế :</strong><?=$_SESSION['chairs'];?>
+                        </div>
+                        <div>
+                            <strong>Ngày :</strong><?=$_SESSION['date'];?>
+                        </div>
+                        <div>
+                            <strong>Giờ chiếu :</strong><?=$_SESSION['time'];?>
+                        </div>
+                        <div>
+                            <strong>Rạp :</strong><?=$_SESSION['address'];?>
+                        </div>
+                    </div>
+            <?php
         }
     }
 
     
+
 ?>

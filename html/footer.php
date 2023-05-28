@@ -17,7 +17,7 @@
         </div>
         <div>
             <div>
-                <h4>CINESTART</h4>
+                <h4>CINESTAR</h4>
             </div>
             <div>
                 <ul>
@@ -55,5 +55,12 @@
                 </ul>
             </div>
         </div>
+        <div>
+            <div>
+                <div id="map" style="width: 400px; height: 250px;"></div>
+
+            </div>
+        </div>
     </div>
+    <script src="../js/map.js"></script>
 </div>

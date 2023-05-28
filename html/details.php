@@ -26,7 +26,7 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH4+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css//details.css?v=1">
+    <link rel="stylesheet" href="../css//details.css">
     <title>Chi tiết sản phẩm</title>
 </head>
 
@@ -42,7 +42,7 @@
                     <nav class="inner-wrapper">
                         <input checked type="radio" name="slide" class="control" id="Slide1" />
                         <label for="Slide1" id="s1"></label>
-                        <input type="radio" name="slide" class="control" id="Slide2" />
+                        <input type="radio" name="slide" class="control" id="Slide2"  />
                         <label for="Slide2" id="s2"></label>
                         <input type="radio" name="slide" class="control" id="Slide3" />
                         <label for="Slide3" id="s3"></label>
@@ -107,30 +107,19 @@
                     <div class="select_list_movie">
                         <h3>Chọn rạp</h3>
                         <div class="select_address">
-                            <label class="row_chair">
-                                <input type="radio" name="address" value="CineStar Quốc Thanh">
-                                <span class="checkmark">CineStar Quốc Thanh</span>
-                            </label>
-                            <label class="row_chair">
-                                <input type="radio" name="address" value="CineStar Đà Lạt">
-                                <span class="checkmark">CineStar Đà Lạt</span>
-                            </label>
-                            <label class="row_chair">
-                                <input type="radio" name="address" value="CineStar Hai Bà Trưng">
-                                <span class="checkmark">CineStar Hai Bà Trưng</span>
-                            </label>
-                            <label class="row_chair">
-                                <input type="radio" name="address" value="CineStar Bình Dương ">
-                                <span class="checkmark">CineStar Bình Dương </span>
-                            </label>
-                            <label class="row_chair">
-                                <input type="radio" name="address" value="CineStar Huế">
-                                <span class="checkmark">CineStar Huế</span>
-                            </label>
-                            <label class="row_chair">
-                                <input type="radio" name="address" value="CineStar Mỹ Tho">
-                                <span class="checkmark">CineStar Mỹ Tho</span>
-                            </label>
+                            <?php
+                                $query = "SELECT * FROM tbl_cinema  WHERE active='Hoạt động'";
+                                $result = $conn->query($query);
+
+                                while($row = $result->fetch_array()){
+                                echo '
+                                        <label class="row_chair">
+                                            <input type="radio" name="address" value="'.$row['cinema'].'" require />
+                                            <span class="checkmark">'.$row['cinema'].'</span>
+                                        </label>
+                                ';
+                                }
+                                ?>
                         </div>
                         <br>
                         <hr><br>
@@ -168,34 +157,26 @@
                         <hr><br>
                         <h3>Chọn giờ chiếu</h3>
                         <div class="select_time">
-                            <label class="row_chair">
-                                <input type="radio" name="time" value="<?php echo $time;?>">
-                                <span class="checkmark">
-                                    <?php echo $time;?>
-                                </span>
-                            </label>
-                            <label class="row_chair">
-                                <input type="radio" name="time" value="<?php echo $time2;?>">
-                                <span class="checkmark">
-                                    <?php echo $time2;?>
-                                </span>
-                            </label>
-                            <label class="row_chair">
-                                <input type="radio" name="time" value="<?php echo $time3;?>">
-                                <span class="checkmark">
-                                    <?php echo $time3;?>
-                                </span>
-                            </label>
-                            <label class="row_chair">
-                                <input type="radio" name="time" value="<?php echo $time4;?>">
-                                <span class="checkmark">
-                                    <?php echo $time4;?>
-                                </span>
-                            </label>
+                            <?php
+
+                                $query = "SELECT * FROM tbl_time";
+                                $result = $conn->query($query);
+
+                                while($row = $result->fetch_array()){
+                                echo '
+                                        <label class="row_chair">
+                                            <input type="radio" name="time" value="'.$row['time'].'" require />
+                                            <span class="checkmark">
+                                                '.$row['time'].'
+                                            </span>
+                                        </label>
+                                ';
+                                }
+                            ?>
                         </div>
                         <br>
                         <div class="button">
-                            <button type="submit" name="save_session">Xac nhan</button>
+                            <button type="submit" name="save_session">XÁC NHẬN</button>
                         </div>
                     </div>
                 </div>
@@ -240,7 +221,7 @@
                             <?php echo $present;?>
                         </div>
                         <div class="rate">
-                            <div>
+                            <!-- <div>
                                 Đánh giá :
                             </div>
                             <div class="star">
@@ -249,7 +230,7 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="trailer_film">
                             <div class="trailer">

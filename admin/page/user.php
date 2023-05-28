@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-search">
                     <form action="" method="get">
-                        <input type="text" placeholder="Tìm kiếm ...">
+                        <input type="text" name="search" placeholder="Tìm kiếm ...">
                         <button type="submit" name="search"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
@@ -48,15 +48,7 @@
                     <th><i class="fa fa-gears"></i></th>
                 </tr>
                 <?php
-            if(isset($_POST['search']))
-                {
-                    $search = $_GET['search'];   
-                    $sql = "SELECT * FROM tbl_user where
-                        fullname like '%$search%' or
-                        username like '%$search%'
-                    ";
-                    $res2 = mysqli_query($conn, $sql);
-                }
+            
                     $sql = "SELECT * FROM tbl_user";
                     $res = mysqli_query($conn, $sql);
                     if($res==TRUE) 
@@ -93,11 +85,40 @@
                 <?php
                                     }
                                 }
-                            }
-                            else
-                            {
-                                
-                            }
+                    }
+                    else if(isset($_POST['search']))
+                    {
+                        $search = $_GET['search'];   
+                        $sql1 = "SELECT * FROM tbl_user where
+                            email like '%$search%' or
+                            username like '%$search%'
+                        ";
+                        $res2 = mysqli_query($conn, $sql1);
+                        if($res2 ==true)
+                        {
+                            echo '
+                        <tr>
+                        <td><strong>.<?php echo $stt++;?></strong></td>
+                        <td><?php echo $fullname;?></td>
+                        <td><?php echo $username;?></td>
+                            <td><?php echo $active;?></td>
+                            <td>
+                                <button class="icon-edit"><a
+                                        href="<?php echo SITEURL; ?>admin/page/update-user.php?STT=<?php echo $STT; ?>"><i
+                                            class="fa fa-edit"></i></a></button>
+                                <button class="icon-trash"><a
+                                        href="<?php echo SITEURL; ?>admin/page/delete-user.php?STT=<?php echo $STT; ?>"><i
+                                            class="fa fa-trash"></i></a></button>
+                            </td>
+                        </tr>
+                        ';
+                        }
+                        else{
+                            echo "false";
+                        }
+                    }
+                        
+                            
             ?>
             </table>
         </div>

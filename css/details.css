@@ -410,7 +410,7 @@ body {
 .select_time,
 .select_time label {
     display: flex;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .button button {

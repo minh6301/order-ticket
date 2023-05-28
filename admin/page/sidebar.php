@@ -35,6 +35,12 @@
             <a href="<?php echo SITEURL;?>admin/page/kh.php"><i class="fa fa-users fa-icon"></i>Khách hàng</a>
         </li>
         <li class="sidebar-item-menu">
+            <a href="<?php echo SITEURL;?>admin/page/cinema.php"><i class="fa fa-users fa-icon"></i>Rạp chiếu</a>
+        </li>
+        <li class="sidebar-item-menu">
+            <a href="<?php echo SITEURL;?>admin/page/time.php"><i class="fa fa-clock fa-icon"></i>Thời gian</a>
+        </li>
+        <li class="sidebar-item-menu">
             <a href="<?php echo SITEURL;?>admin/page/user.php"><i class="fa fa-user-circle fa-icon"></i>Người quản
                 lý</a>
         </li>

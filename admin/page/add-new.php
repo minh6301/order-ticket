@@ -72,6 +72,7 @@
         <?php
     if(isset($_POST['submit']))
     {
+
         $title = $_POST['title'];
         $content = $_POST['content'];
         $image_name = $_POST['image'];
@@ -101,7 +102,7 @@
         }
         else
         {
-            $image_name = "";
+            $image_name = "No image available";
         }
 
         if(isset($_POST['active']))
@@ -123,13 +124,13 @@
         if($res==TRUE)
         {
             $_SESSION['add-user']=`<div style="color:green">Thêm thành công</div>`;
-            header('location:' .SITEURL. '/admin/page/new.php');
+            // header('location:' .SITEURL. '/admin/page/new.php');
             exit();
         }
         else
         {
             $_SESSION['add-user']=`<div style="color:red">Thêm không thành công</div>`;
-            header('location:'.SITEURL.'/admin/page/add-new.php');
+            // header('location:'.SITEURL.'/admin/page/add-new.php');
         }
     }
 ?>

@@ -30,7 +30,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH4+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="stylesheet" href="../css/ticket.css">
-    <title>Document</title>
+    <title>Chọn ghế</title>
 </head>
 
 <body>
@@ -77,7 +77,7 @@
             </div>
             <form action="" method="post">
                 <?php 
-                    showgiohang();
+                    buyTicket();
                 ?>
                 <div class="select_space">
                     <h5>Người / Ghế</h5>
@@ -338,18 +338,19 @@
                             <div id="log"></div>
                         </div>
                         <div class="price_ticket">
-                            <!-- <?php
+                            <?php
                                 if(isset($_SESSION['gia']))
                                 {
                                     ?>
-                            <p>Giá 1 vé :
+                            <p>Giá vé :
                                 <?=$_SESSION['gia'];?> VND
                             </p>
                             <?php
                                 }
-                            ?> -->
+                            ?>
                             <p id="price">
                             </p>
+                            <input type="hidden" name="price[]" id="price" value="" />
                         </div>
                         <div>
                             <input type="hidden" name="moviename" value="<?=$_SESSION['moviename'];?>" />
@@ -362,7 +363,7 @@
                 </div>
             </form>
         </div>
-        <script src="../js/ticket.js"></script>
+        <script src="../js//ticket.js"></script>
     </div>
 
     <?php require'../html/footer.php';?>

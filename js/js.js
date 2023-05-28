@@ -1,14 +1,4 @@
-const toggle = document.querySelector(".show-password");
-toggle.addEventListener("click", function () {
-    const input = this.previousElementSibling;
-    const inputType = input.getAttribute("type");
-    if (inputType === "password") {
-        input.setAttribute("type", "text");
-    }
-    else {
-        input.setAttribute("type", "password");
-    }
-});
+
 
 
 const $ = document.querySelector.bind(document)
@@ -30,4 +20,16 @@ tabs.forEach((tab, index) => {
         pane.classList.add('active')
     }
 })
+
+const toggle = document.querySelector(".show-password");
+toggle.addEventListener("click", function () {
+    const input = this.previousElementSibling;
+    const inputType = input.getAttribute("type");
+    if (inputType === "password") {
+        input.setAttribute("type", "text");
+    }
+    else {
+        input.setAttribute("type", "password");
+    }
+});
 
